@@ -73,10 +73,10 @@ const Home = () => {
                     ref={gridRef}
                 ></AgGridReact>
             </div>
-            <Modal
+            {/* <Modal
                 // open={isopenModal}
                 // onClose={handleClose}
-            />
+            /> */}
         </section>
     )
 }
