@@ -1,17 +1,18 @@
 import { Button, Dialog, DialogTitle } from '@mui/material'
 import React from 'react'
 import { useGlobalContext } from '../../context'
-// import { useGlobalContext } from './context'
 
 const Modal = () => {
   const { isopenModal, closeModal, openModal, modaldata } = useGlobalContext()
   const selectedModal = modaldata[0]
+  console.log("data in modal",modaldata)
   return (
     <div>
       {isopenModal &&
         <Dialog onClose={closeModal} open={isopenModal}>
           <div className="modal_header">
-            <DialogTitle className='modal_title'>Name : name here</DialogTitle>
+            <DialogTitle className='modal_title'>Name : here</DialogTitle>
+            {/* {selectedModal.strDrink} */}
           </div>
           <div className="modal">
             <div className="modal_left">

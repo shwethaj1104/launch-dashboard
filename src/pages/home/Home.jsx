@@ -6,7 +6,7 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 import { useEffect } from 'react';
 import Modal from '../modal/Modal';
-// import { useGlobalContext } from '../../context';
+import { useGlobalContext } from '../../context';
 
 const url = 'https://api.spacexdata.com/v3/launches'
 
@@ -25,7 +25,7 @@ const Home = () => {
     const [launches, setLaunches] = useState([])
     const [rowData, setRowdata] = useState([])
     const gridRef = useRef();
-    // const {openModal, closeModal, isopenModal } = useGlobalContext()
+    const {openModal, closeModal, isopenModal } = useGlobalContext()
 
     // const [value, setValue] = useState(0);
     const fetchJobs = async () => {
@@ -48,10 +48,10 @@ const Home = () => {
     const onSelectionChanged = useCallback(() => {
         const selectedRows = gridRef.current.api.getSelectedRows();
         console.log("selected...", selectedRows)
-        // openModal(selectedRows)
+        openModal(selectedRows[0])
     }, []);
     const handleClose = () => {
-        // closeModal()
+        closeModal()
     };
     return (
         <section>
@@ -73,10 +73,10 @@ const Home = () => {
                     ref={gridRef}
                 ></AgGridReact>
             </div>
-            {/* <Modal
+            <Modal
                 open={isopenModal}
                 onClose={handleClose}
-            /> */}
+            />
         </section>
     )
 }
