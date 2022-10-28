@@ -74,8 +74,8 @@ const Home = () => {
                 ></AgGridReact>
             </div>
             {/* <Modal
-                // open={isopenModal}
-                // onClose={handleClose}
+                open={isopenModal}
+                onClose={handleClose}
             /> */}
         </section>
     )
