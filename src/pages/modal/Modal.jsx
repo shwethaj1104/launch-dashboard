@@ -1,6 +1,7 @@
 import { Button, Dialog, DialogTitle } from '@mui/material'
 import React from 'react'
 import { useGlobalContext } from '../../context'
+import './modal.css'
 
 const Modal = () => {
   const { isopenModal, closeModal, openModal, modaldata } = useGlobalContext()
@@ -10,28 +11,32 @@ const Modal = () => {
     <div>
       {isopenModal &&
         <Dialog onClose={closeModal} open={isopenModal}>
+            <section className='modal'>
           <div className="modal_header">
-            <DialogTitle className='modal_title'>Name : here</DialogTitle>
-            {/* {selectedModal.strDrink} */}
-          </div>
-          <div className="modal">
-            <div className="modal_left">
-              {/* <img className='modal_img' src={selectedModal.strDrinkThumb}></img> */}
+            <img className='modal_img' src={modaldata.links.mission_patch_small}></img>
+            <div className='modal_header-right'>
+            <h4 className='modal_title'>Name : {modaldata.mission_name}</h4>
+            <p className="modal-rocketname">{modaldata.rocket.rocket_name}</p>
             </div>
-            {/* <div className="modal-right">
-              <div className="id"><strong>ID : </strong> <label htmlFor="">{selectedModal.idDrink}</label></div>
-              <div className="id"><strong>Is Alcoholic ? </strong> <label htmlFor="">{selectedModal.strAlcoholic}</label></div>
-              <div className="id"><strong>Category : </strong> <label htmlFor="">{selectedModal.strCategory}</label></div>
-              <div className="id"><strong>Glass : </strong><label htmlFor="">{selectedModal.strGlass}</label></div>
-              <div className="id"><strong>Ingredient 1 : </strong><label htmlFor="">{selectedModal.strIngredient1}</label></div>
-              <div className="id"><strong>Ingredient 2 : </strong><label htmlFor="">{selectedModal.strIngredient2}</label></div>
-              <div className="id"><strong>Ingredient 3 : </strong><label htmlFor="">{selectedModal.strIngredient3}</label></div>
-              <div className="id"><strong>Ingredient 4 : </strong><label htmlFor="">{selectedModal.strIngredient4}</label></div>
-              <div className="id"><strong>Instructions : </strong><label htmlFor="">{selectedModal.strInstructions}</label></div>
-              <div className="id"><strong>Measure : </strong><label htmlFor="">{selectedModal.strMeasure1}</label></div>
-              <div className="id"><strong>Creative Commons Confirmed ? </strong><label htmlFor="">{selectedModal.strCreativeCommonsConfirmed}</label></div>
-            </div> */}
           </div>
+          <div className="modal_body">
+            <div className="modal_left">
+              <p>{modaldata.details}</p>
+            </div>
+            <div className="modal-right">
+              <div className="id"><strong>Flight Number  </strong> <label htmlFor="">{modaldata.flight_number}</label></div>
+              <div className="id"><strong>Mission Name  </strong> <label htmlFor="">{modaldata.mission_name}</label></div>
+              <div className="id"><strong>Rocket Type </strong> <label htmlFor="">{modaldata.rocket.rocket_type}</label></div>
+              <div className="id"><strong>Rocket Name  </strong><label htmlFor="">{modaldata.rocket.rocket_name}</label></div>
+              <div className="id"><strong>Manufacturer  </strong><label htmlFor="">{modaldata.rocket.second_stage.payloads[0].manufacturer}</label></div>
+              <div className="id"><strong>Nationality  </strong><label htmlFor="">{modaldata.rocket.second_stage.payloads[0].nationality}</label></div>
+              <div className="id"><strong>Launch Date  </strong><label htmlFor="">{modaldata.launch_date_utc}</label></div>
+              <div className="id"><strong>Payload Type  </strong><label htmlFor="">{modaldata.rocket.second_stage.payloads[0].payload_type}</label></div>
+              <div className="id"><strong>Orbit  </strong><label htmlFor="">{modaldata.rocket.second_stage.payloads[0].orbit}</label></div>
+              <div className="id"><strong>Launch Site  </strong><label htmlFor="">{modaldata.launch_site.site_name}</label></div>
+            </div>
+          </div>
+            </section>
         </Dialog>
       }
     </div>
