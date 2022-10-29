@@ -4,15 +4,15 @@ import { useGlobalContext } from '../../context';
 import Modal from '../modal/Modal';
 
 const Table = ({ rowData }) => {
-    
+
     const gridRef = useRef();
     const { openModal, closeModal, isopenModal } = useGlobalContext()
 
     const [columnDefs] = useState([
-        { headerName: 'No:', field: 'flight_number', width: 100 },
+        { headerName: 'No:', field: 'flight_number', width: 80 },
         { headerName: 'Launched (UTC)', field: 'launch_date_utc', width: 210 },
-        { headerName: 'Location', valueGetter: 'data.launch_site.site_name', width: 200 },
-        { headerName: 'Mission', field: 'mission_name', flex: 1 },
+        { headerName: 'Location', valueGetter: 'data.launch_site.site_name', width: 150 },
+        { headerName: 'Mission', field: 'mission_name', width:300},
         { headerName: 'Orbit', valueGetter: 'data.rocket.second_stage.payloads[0].orbit', flex: 1 },
         { headerName: 'Launch Status', field: 'launch_success', flex: 1 },
         { headerName: 'Upcoming ? ', field: 'upcoming', flex: 1 },
