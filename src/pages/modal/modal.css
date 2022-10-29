@@ -1,24 +1,64 @@
-.modal{
+.modal {
     margin: 1rem;
 }
 
-.modal_header{
+.modal_header {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
-img{
+
+img {
     height: 5rem;
 }
-.modal_header-right{
+
+.modal_header-right {
     display: flex;
     flex-direction: column;
     gap: -2rem;
 }
-h4, p{
+
+.modal_header-rightSection {
+    display: flex;
+    gap: 2rem;
+
+}
+
+.upcoming {
+    color: orange;
+    font-weight: 500;
+    border-radius: 1rem;
+    padding: 0.1rem 1rem !important;
+    background-color: #ffa5002e;
+}
+
+.success {
+    color: green;
+    font-weight: 500;
+    border-radius: 1rem;
+    padding: 0.1rem 1rem !important;
+    background-color: #00800047;
+}
+
+.failure {
+    color: red;
+    background: #ff00002e;
+    font-weight: 500;
+    border-radius: 1rem;
+    padding: 0.1rem 1rem !important;
+}
+
+h4,
+p {
     margin: 0 !important;
     padding: 0 !important;
 }
-.modal_left>p{
+
+.modal_left {
+    margin-bottom: 1rem;
+}
+
+.modal_left>p {
     font-size: 14px;
 }

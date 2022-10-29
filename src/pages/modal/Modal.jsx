@@ -1,12 +1,18 @@
 import { Button, Dialog, DialogTitle } from '@mui/material'
 import React from 'react'
+import { useState } from 'react'
 import { useGlobalContext } from '../../context'
 import './modal.css'
 
+let status;
 const Modal = () => {
   const { isopenModal, closeModal, openModal, modaldata } = useGlobalContext()
   const selectedModal = modaldata[0]
   console.log("data in modal",modaldata)
+    if(modaldata.upcoming){status = 'Upcoming'}
+    else if(modaldata.launch_success){status = 'Success'}
+    else{status='Failure'}
+
   return (
     <div>
       {isopenModal &&
@@ -15,7 +21,13 @@ const Modal = () => {
           <div className="modal_header">
             <img className='modal_img' src={modaldata.links.mission_patch_small}></img>
             <div className='modal_header-right'>
-            <h4 className='modal_title'>Name : {modaldata.mission_name}</h4>
+              <div className="modal_header-rightSection">
+            <h4 className='modal_title'> {modaldata.mission_name}</h4>
+            {status === 'Upcoming'?  <p className='upcoming'>{status}</p> :
+            <>
+            {status === 'Success'?  <p className='success'>{status}</p> : <p className='failure'>{status}</p>}
+            </>}
+              </div>
             <p className="modal-rocketname">{modaldata.rocket.rocket_name}</p>
             </div>
           </div>
