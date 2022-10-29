@@ -7,3 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+  max-height: none !important
+}

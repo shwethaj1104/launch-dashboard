@@ -98,3 +98,6 @@ hr {
     text-decoration: none;
     color: gray;
 }
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+    max-height: none !important
+}

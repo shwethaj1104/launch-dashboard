@@ -3,6 +3,10 @@ h1 {
     align-items: center;
     justify-content: center;
     color: #081870ad;
+    font-size: 2rem;
+    font-family: 'Kaushan Script' !important;
+    margin-bottom: 0 !important;
+    margin-top: 0.5rem !important;
 }
 
 .content {
