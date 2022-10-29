@@ -8,6 +8,7 @@ import './home.css';
 import { useEffect } from 'react';
 import Modal from '../modal/Modal';
 import { useGlobalContext } from '../../context';
+import { useNavigate } from 'react-router-dom';
 
 const url = 'https://api.spacexdata.com/v3/launches'
 
@@ -25,8 +26,11 @@ const Home = () => {
     // const [loading, setLoading] = useState(true);
     const [launches, setLaunches] = useState([])
     const [rowData, setRowdata] = useState([])
+    const [filteredRowData, setFilteredRowData] = useState([])
+    const [dropdown, setDropdDown] = useState([])
     const gridRef = useRef();
     const { openModal, closeModal, isopenModal } = useGlobalContext()
+    const navigate = useNavigate();
 
     // const [value, setValue] = useState(0);
     const fetchJobs = async () => {
@@ -35,6 +39,7 @@ const Home = () => {
         console.log("newJobs", newresponse)
         setLaunches(newresponse)
         setRowdata(newresponse)
+        setFilteredRowData(newresponse)
     }
 
     useEffect(() => {
@@ -54,6 +59,25 @@ const Home = () => {
     const handleClose = () => {
         closeModal()
     };
+    const handleChange=(e)=>{
+        setDropdDown(e.target.value);
+        const filteredData = filteredRowData.filter(val=>{
+            if(e.target.value==='Upcoming Launches'){
+                navigate("/upcoming-Launches")
+                return val.upcoming==true
+            }else if(e.target.value==='Successfull Launches'){
+                navigate("/succesfull-Launches")
+                return val.launch_success==true
+            }else if(e.target.value==='Failed Launches'){
+                navigate("/failed-Launches")
+                return val.launch_success==false
+            }else{
+                navigate("/")
+                return val
+            }
+        })
+        setRowdata(filteredData)
+      }
     return (
         <section>
             <h1>SPACEX</h1><hr></hr>
@@ -62,7 +86,10 @@ const Home = () => {
                 <select name="time" id="time">
                     {timeList.map(el => <option value={el} key={el}> {el} </option>)}
                 </select>
-                <select name="launchfilter" id="launchfilter">
+                <select name="launchfilter" id="launchfilter" 
+                value={dropdown} 
+                onChange={handleChange} 
+                >
                     {launchFilterData.map(el => <option value={el} key={el}> {el} </option>)}
                 </select>
             </div>
