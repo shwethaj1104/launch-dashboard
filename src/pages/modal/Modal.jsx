@@ -1,4 +1,4 @@
-import {  Dialog } from '@mui/material'
+import { Dialog } from '@mui/material'
 import React from 'react'
 import { useGlobalContext } from '../../context'
 import './modal.css'
@@ -9,7 +9,7 @@ import WbAutoIcon from '@material-ui/icons/WbAuto';
 let status;
 const Modal = () => {
   const { isopenModal, closeModal, openModal, modaldata } = useGlobalContext()
-  // console.log("data in modal", modaldata)
+  
   if (modaldata.upcoming) { status = 'Upcoming' }
   else if (modaldata.launch_success) { status = 'Success' }
   else { status = 'Failure' }
@@ -31,13 +31,11 @@ const Modal = () => {
                   <button className='closeBtn' onClick={closeModal}>&#10005;</button>
                 </div>
                 <p className="modal-rocketname">{modaldata.rocket.rocket_name}</p>
-                 <div className='media-links'>
-                {modaldata.links.reddit_launch ? <a className='web-links' target="_blank" href={modaldata.links.reddit_launch}><LanguageIcon/></a> : <></>}
-                {modaldata.links.wikipedia ? <a className='web-links' target="_blank" href={modaldata.links.wikipedia}><WbAutoIcon/></a> : <></>}
-                {modaldata.links.video_link ? <a className='web-links' target="_blank" href={modaldata.links.video_link}><YouTubeIcon/></a> : <></>}
-
-                  
-                  </div> 
+                <div className='media-links'>
+                  {modaldata.links.reddit_launch ? <a className='web-links' target="_blank" href={modaldata.links.reddit_launch}><LanguageIcon /></a> : <></>}
+                  {modaldata.links.wikipedia ? <a className='web-links' target="_blank" href={modaldata.links.wikipedia}><WbAutoIcon /></a> : <></>}
+                  {modaldata.links.video_link ? <a className='web-links' target="_blank" href={modaldata.links.video_link}><YouTubeIcon /></a> : <></>}
+                </div>
               </div>
             </div>
             <div className="modal_body">
