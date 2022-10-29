@@ -8,8 +8,8 @@ import WbAutoIcon from '@material-ui/icons/WbAuto';
 
 let status;
 const Modal = () => {
-  const { isopenModal, closeModal, openModal, modaldata } = useGlobalContext()
-  
+  const { isopenModal, closeModal, modaldata } = useGlobalContext()
+
   if (modaldata.upcoming) { status = 'Upcoming' }
   else if (modaldata.launch_success) { status = 'Success' }
   else { status = 'Failure' }
@@ -20,7 +20,7 @@ const Modal = () => {
         <Dialog onClose={closeModal} open={isopenModal}>
           <section className='modal'>
             <div className="modal_header">
-              <img className='modal_img' src={modaldata.links.mission_patch_small}></img>
+              <img className='modal_img' src={modaldata.links.mission_patch_small} alt='mission'></img>
               <div className='modal_header-right'>
                 <div className="modal_header-rightSection">
                   <h4 className='modal_title'> {modaldata.mission_name}</h4>
@@ -32,16 +32,16 @@ const Modal = () => {
                 </div>
                 <p className="modal-rocketname">{modaldata.rocket.rocket_name}</p>
                 <div className='media-links'>
-                  {modaldata.links.reddit_launch ? <a className='web-links' target="_blank" href={modaldata.links.reddit_launch}><LanguageIcon /></a> : <></>}
-                  {modaldata.links.wikipedia ? <a className='web-links' target="_blank" href={modaldata.links.wikipedia}><WbAutoIcon /></a> : <></>}
-                  {modaldata.links.video_link ? <a className='web-links' target="_blank" href={modaldata.links.video_link}><YouTubeIcon /></a> : <></>}
+                  {modaldata.links.reddit_launch ? <a className='web-links' target="_blank" href={modaldata.links.reddit_launch} rel="noreferrer"><LanguageIcon /></a> : <></>}
+                  {modaldata.links.wikipedia ? <a className='web-links' target="_blank" href={modaldata.links.wikipedia} rel="noreferrer"><WbAutoIcon /></a> : <></>}
+                  {modaldata.links.video_link ? <a className='web-links' target="_blank" href={modaldata.links.video_link} rel="noreferrer"><YouTubeIcon /></a> : <></>}
                 </div>
               </div>
             </div>
             <div className="modal_body">
               <div className="modal_left">
                 <p>{modaldata.details}</p>
-                {modaldata.links.wikipedia ? <a className='wiki' target="_blank" href={modaldata.links.wikipedia}>Wikipedia</a> : <></>}
+                {modaldata.links.wikipedia ? <a className='wiki' target="_blank" href={modaldata.links.wikipedia} rel="noreferrer">Wikipedia</a> : <></>}
               </div>
               <div className="modal_right">
                 <div className="modal-right_items">Flight Number  <label htmlFor="">{modaldata.flight_number}</label></div><hr></hr>

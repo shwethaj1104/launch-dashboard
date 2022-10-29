@@ -11,7 +11,7 @@ import Table from '../table/Table';
 const url = 'https://api.spacexdata.com/v3/launches'
 
 const Home = () => {
-    const [launches, setLaunches] = useState([])
+    // const [launches, setLaunches] = useState([])
     const [rowData, setRowdata] = useState([])
     const [filteredRowData, setFilteredRowData] = useState([])
     const [dropdown, setDropdDown] = useState([])
@@ -29,11 +29,11 @@ const Home = () => {
         routerFilterBoolean=true;
         const filteredData = filteredRowData.filter(val => {
             if (routefilter === "/upcoming-Launches") {
-                return val.upcoming == true
+                return val.upcoming === true
             } else if (routefilter === "/succesfull-Launches") {
-                return val.launch_success == true
+                return val.launch_success === true
             } else if (routefilter === "/failed-Launches") {
-                return val.launch_success == false
+                return val.launch_success === false
             } else {
                 return val
             }
@@ -45,7 +45,7 @@ const Home = () => {
     const fetchJobs = async () => {
         const response = await fetch(url);
         const newresponse = await response.json();
-        setLaunches(newresponse)
+        // setLaunches(newresponse)
         setRowdata(newresponse)
         setFilteredRowData(newresponse)
     }
@@ -59,13 +59,13 @@ const Home = () => {
         const filteredData = filteredRowData.filter(val => {
             if (e.target.value === 'Upcoming Launches') {
                 navigate("/upcoming-Launches")
-                return val.upcoming == true
+                return val.upcoming === true
             } else if (e.target.value === 'Successfull Launches') {
                 navigate("/succesfull-Launches")
-                return val.launch_success == true
+                return val.launch_success === true
             } else if (e.target.value === 'Failed Launches') {
                 navigate("/failed-Launches")
-                return val.launch_success == false
+                return val.launch_success === false
             } else {
                 navigate("/")
                 return val
