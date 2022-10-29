@@ -2,6 +2,7 @@ import React, { useCallback, useRef, useState } from 'react'
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import './home.css';
 
 
 import { useEffect } from 'react';
@@ -25,7 +26,7 @@ const Home = () => {
     const [launches, setLaunches] = useState([])
     const [rowData, setRowdata] = useState([])
     const gridRef = useRef();
-    const {openModal, closeModal, isopenModal } = useGlobalContext()
+    const { openModal, closeModal, isopenModal } = useGlobalContext()
 
     // const [value, setValue] = useState(0);
     const fetchJobs = async () => {
@@ -55,8 +56,9 @@ const Home = () => {
     };
     return (
         <section>
-            <h1>SPACEX</h1>
-            <div className="filter">
+            <h1>SPACEX</h1><hr></hr>
+            <div className="content">
+            <div className="filter-section">
                 <select name="time" id="time">
                     {timeList.map(el => <option value={el} key={el}> {el} </option>)}
                 </select>
@@ -72,6 +74,7 @@ const Home = () => {
                     onSelectionChanged={onSelectionChanged}
                     ref={gridRef}
                 ></AgGridReact>
+            </div>
             </div>
             <Modal
                 open={isopenModal}

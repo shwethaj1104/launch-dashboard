@@ -1,0 +1,25 @@
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #081870ad;
+}
+.content{
+    padding: 0.5rem 2.5rem 1rem 2.5rem;
+}
+.filter-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 0rem 1rem 0rem;
+}
+.ag-theme-alpine{
+    height: 30rem;
+    margin: auto;
+  }
+  select{
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+    outline: none;
+  }
