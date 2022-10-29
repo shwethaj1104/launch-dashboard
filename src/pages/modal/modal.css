@@ -25,9 +25,10 @@ img {
     grid-template-columns: 1fr 1fr 3fr;
 
 }
-.statusInfo{
+
+.statusInfo {
     font-weight: 500;
-    border-radius: 1rem ;
+    border-radius: 1rem;
     padding: 0.1rem 1rem !important;
     font-size: 14px;
     height: 1.3rem;
@@ -62,16 +63,18 @@ p {
     font-size: 14px;
 }
 
-.modal-right_items{
+.modal-right_items {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size:15px
+    font-size: 15px
 }
-hr{
+
+hr {
     border: solid 0.1px #80808038;
 }
-.closeBtn{
+
+.closeBtn {
     background: none;
     border: none;
     font-size: 16px;
@@ -80,15 +83,18 @@ hr{
     display: flex;
     justify-content: end;
 }
-.wiki{
+
+.wiki {
     text-decoration: none;
     color: blue;
 }
-.media-links{
+
+.media-links {
     display: flex;
     gap: 1rem;
 }
-.web-links{
+
+.web-links {
     text-decoration: none;
-color: gray;
+    color: gray;
 }

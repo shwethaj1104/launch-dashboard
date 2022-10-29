@@ -1,45 +1,52 @@
-h1{
+h1 {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #081870ad;
 }
-.content{
+
+.content {
     padding: 0.5rem 2.5rem 1rem 2.5rem;
 }
-.filter-section{
+
+.filter-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0rem 0rem 1rem 0rem;
 }
-.ag-theme-alpine{
+
+.ag-theme-alpine {
     height: 30rem;
     margin: auto;
-  }
-  select{
+}
+
+select {
     text-decoration: none;
     border: none;
     font-size: 16px;
     outline: none;
-  }
-  .loader{
-    width:6rem;
-    height:6rem;
-    border:0.5rem solid #52639e;
-    border-radius:50%;
-    animation:loader linear 1s infinite;
-     border-top-width: 0;
+}
+
+.loader {
+    width: 6rem;
+    height: 6rem;
+    border: 0.5rem solid #52639e;
+    border-radius: 50%;
+    animation: loader linear 1s infinite;
+    border-top-width: 0;
     border-left-width: 0;
     border-right-width: 0;
     margin: auto;
     margin-top: 7rem;
-  }
-  @keyframes loader{
-    0%{
-      transform:rotate(0deg)
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg)
     }
-      100%{
-      transform:rotate(360deg)
+
+    100% {
+        transform: rotate(360deg)
     }
-  }
+}
