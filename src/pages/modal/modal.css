@@ -30,21 +30,22 @@ img {
     border-radius: 1rem ;
     padding: 0.1rem 1rem !important;
     font-size: 14px;
+    height: 1.3rem;
 }
 
 .upcoming {
     color: orange;
-    background-color: #ffa5002e;
+    background-color: #ffa6002c;
 }
 
 .success {
     color: green;
-    background-color: #00800047;
+    background-color: #00800033;
 }
 
 .failure {
     color: red;
-    background-color: #ff000038;
+    background-color: #ff000029;
 }
 
 h4,
@@ -78,4 +79,16 @@ hr{
     align-items: center;
     display: flex;
     justify-content: end;
+}
+.wiki{
+    text-decoration: none;
+    color: blue;
+}
+.media-links{
+    display: flex;
+    gap: 1rem;
+}
+.web-links{
+    text-decoration: none;
+color: gray;
 }
