@@ -33,6 +33,7 @@ const Home = () => {
     const navigate = useNavigate();
 
     // const [value, setValue] = useState(0);
+    console.log("rowdata before..........",rowData)
     const fetchJobs = async () => {
         const response = await fetch(url);
         const newresponse = await response.json();
@@ -93,6 +94,7 @@ const Home = () => {
                     {launchFilterData.map(el => <option value={el} key={el}> {el} </option>)}
                 </select>
             </div>
+            {rowData.length>0 ? 
             <div className="ag-theme-alpine">
                 <AgGridReact rowData={rowData} columnDefs={columnDefs}
                     defaultColDef={defaultColDef} paginationAutoPageSize={true}
@@ -101,7 +103,8 @@ const Home = () => {
                     onSelectionChanged={onSelectionChanged}
                     ref={gridRef}
                 ></AgGridReact>
-            </div>
+            </div> : <div className='loader'></div>
+        }
             </div>
             <Modal
                 open={isopenModal}

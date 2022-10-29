@@ -23,3 +23,23 @@ h1{
     font-size: 16px;
     outline: none;
   }
+  .loader{
+    width:6rem;
+    height:6rem;
+    border:0.5rem solid #52639e;
+    border-radius:50%;
+    animation:loader linear 1s infinite;
+     border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    margin: auto;
+    margin-top: 7rem;
+  }
+  @keyframes loader{
+    0%{
+      transform:rotate(0deg)
+    }
+      100%{
+      transform:rotate(360deg)
+    }
+  }
