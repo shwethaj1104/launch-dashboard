@@ -24,29 +24,26 @@ img {
     gap: 2rem;
 
 }
+.statusInfo{
+    font-weight: 500;
+    border-radius: 1rem ;
+    padding: 0.1rem 1rem !important;
+    font-size: 14px;
+}
 
 .upcoming {
     color: orange;
-    font-weight: 500;
-    border-radius: 1rem;
-    padding: 0.1rem 1rem !important;
     background-color: #ffa5002e;
 }
 
 .success {
     color: green;
-    font-weight: 500;
-    border-radius: 1rem;
-    padding: 0.1rem 1rem !important;
     background-color: #00800047;
 }
 
 .failure {
     color: red;
-    background: #ff00002e;
-    font-weight: 500;
-    border-radius: 1rem;
-    padding: 0.1rem 1rem !important;
+    background-color: #ff000038;
 }
 
 h4,

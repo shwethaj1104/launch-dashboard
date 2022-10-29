@@ -23,9 +23,9 @@ const Modal = () => {
             <div className='modal_header-right'>
               <div className="modal_header-rightSection">
             <h4 className='modal_title'> {modaldata.mission_name}</h4>
-            {status === 'Upcoming'?  <p className='upcoming'>{status}</p> :
+            {status === 'Upcoming'?  <p className='upcoming statusInfo'>{status}</p> :
             <>
-            {status === 'Success'?  <p className='success'>{status}</p> : <p className='failure'>{status}</p>}
+            {status === 'Success'?  <p className='success statusInfo'>{status}</p> : <p className='failure statusInfo'>{status}</p>}
             </>}
               </div>
             <p className="modal-rocketname">{modaldata.rocket.rocket_name}</p>
