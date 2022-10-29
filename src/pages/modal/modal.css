@@ -1,5 +1,5 @@
 .modal {
-    margin: 1rem;
+    margin: 1.5rem;
 }
 
 .modal_header {
@@ -20,8 +20,9 @@ img {
 }
 
 .modal_header-rightSection {
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 3fr;
 
 }
 .statusInfo{
@@ -58,4 +59,23 @@ p {
 
 .modal_left>p {
     font-size: 14px;
+}
+
+.modal-right_items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size:15px
+}
+hr{
+    border: solid 0.1px #80808038;
+}
+.closeBtn{
+    background: none;
+    border: none;
+    font-size: 16px;
+    float: right;
+    align-items: center;
+    display: flex;
+    justify-content: end;
 }

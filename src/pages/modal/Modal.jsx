@@ -27,6 +27,7 @@ const Modal = () => {
             <>
             {status === 'Success'?  <p className='success statusInfo'>{status}</p> : <p className='failure statusInfo'>{status}</p>}
             </>}
+            <button className='closeBtn' onClick={closeModal}>&#10005;</button>
               </div>
             <p className="modal-rocketname">{modaldata.rocket.rocket_name}</p>
             </div>
@@ -35,17 +36,17 @@ const Modal = () => {
             <div className="modal_left">
               <p>{modaldata.details}</p>
             </div>
-            <div className="modal-right">
-              <div className="id"><strong>Flight Number  </strong> <label htmlFor="">{modaldata.flight_number}</label></div>
-              <div className="id"><strong>Mission Name  </strong> <label htmlFor="">{modaldata.mission_name}</label></div>
-              <div className="id"><strong>Rocket Type </strong> <label htmlFor="">{modaldata.rocket.rocket_type}</label></div>
-              <div className="id"><strong>Rocket Name  </strong><label htmlFor="">{modaldata.rocket.rocket_name}</label></div>
-              <div className="id"><strong>Manufacturer  </strong><label htmlFor="">{modaldata.rocket.second_stage.payloads[0].manufacturer}</label></div>
-              <div className="id"><strong>Nationality  </strong><label htmlFor="">{modaldata.rocket.second_stage.payloads[0].nationality}</label></div>
-              <div className="id"><strong>Launch Date  </strong><label htmlFor="">{modaldata.launch_date_utc}</label></div>
-              <div className="id"><strong>Payload Type  </strong><label htmlFor="">{modaldata.rocket.second_stage.payloads[0].payload_type}</label></div>
-              <div className="id"><strong>Orbit  </strong><label htmlFor="">{modaldata.rocket.second_stage.payloads[0].orbit}</label></div>
-              <div className="id"><strong>Launch Site  </strong><label htmlFor="">{modaldata.launch_site.site_name}</label></div>
+            <div className="modal_right">
+              <div className="modal-right_items">Flight Number  <label htmlFor="">{modaldata.flight_number}</label></div><hr></hr>
+              <div className="modal-right_items">Mission Name  <label htmlFor="">{modaldata.mission_name}</label></div><hr></hr>
+              <div className="modal-right_items">Rocket Type <label htmlFor="">{modaldata.rocket.rocket_type}</label></div><hr></hr>
+              <div className="modal-right_items">Rocket Name <label htmlFor="">{modaldata.rocket.rocket_name}</label></div><hr></hr>
+              <div className="modal-right_items">Manufacturer <label htmlFor="">{modaldata.rocket.second_stage.payloads[0].manufacturer}</label></div><hr></hr>
+              <div className="modal-right_items">Nationality <label htmlFor="">{modaldata.rocket.second_stage.payloads[0].nationality}</label></div><hr></hr>
+              <div className="modal-right_items">Launch Date <label htmlFor="">{modaldata.launch_date_utc}</label></div><hr></hr>
+              <div className="modal-right_items">Payload Type <label htmlFor="">{modaldata.rocket.second_stage.payloads[0].payload_type}</label></div><hr></hr>
+              <div className="modal-right_items">Orbit <label htmlFor="">{modaldata.rocket.second_stage.payloads[0].orbit}</label></div><hr></hr>
+              <div className="modal-right_items">Launch Site <label htmlFor="">{modaldata.launch_site.site_name}</label></div>
             </div>
           </div>
             </section>
