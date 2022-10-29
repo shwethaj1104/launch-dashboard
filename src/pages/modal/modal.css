@@ -1,5 +1,5 @@
 .modal {
-    margin: 1rem;
+    margin: 1.5rem;
 }
 
 .modal_header {
@@ -20,33 +20,32 @@ img {
 }
 
 .modal_header-rightSection {
-    display: flex;
-    gap: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 3fr;
 
+}
+.statusInfo{
+    font-weight: 500;
+    border-radius: 1rem ;
+    padding: 0.1rem 1rem !important;
+    font-size: 14px;
+    height: 1.3rem;
 }
 
 .upcoming {
     color: orange;
-    font-weight: 500;
-    border-radius: 1rem;
-    padding: 0.1rem 1rem !important;
-    background-color: #ffa5002e;
+    background-color: #ffa6002c;
 }
 
 .success {
     color: green;
-    font-weight: 500;
-    border-radius: 1rem;
-    padding: 0.1rem 1rem !important;
-    background-color: #00800047;
+    background-color: #00800033;
 }
 
 .failure {
     color: red;
-    background: #ff00002e;
-    font-weight: 500;
-    border-radius: 1rem;
-    padding: 0.1rem 1rem !important;
+    background-color: #ff000029;
 }
 
 h4,
@@ -61,4 +60,35 @@ p {
 
 .modal_left>p {
     font-size: 14px;
+}
+
+.modal-right_items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size:15px
+}
+hr{
+    border: solid 0.1px #80808038;
+}
+.closeBtn{
+    background: none;
+    border: none;
+    font-size: 16px;
+    float: right;
+    align-items: center;
+    display: flex;
+    justify-content: end;
+}
+.wiki{
+    text-decoration: none;
+    color: blue;
+}
+.media-links{
+    display: flex;
+    gap: 1rem;
+}
+.web-links{
+    text-decoration: none;
+color: gray;
 }
