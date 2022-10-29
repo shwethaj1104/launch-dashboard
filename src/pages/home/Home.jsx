@@ -18,13 +18,13 @@ const Home = () => {
     const navigate = useNavigate();
     const location = useLocation()
 
-    const timeList = ['past month', 'past 6 months']
+    const timeList = ['past 6 months']
     const launchFilterData = ['All Launches', 'Upcoming Launches', 'Successfull Launches', 'Failed Launches']
     
     let routerFilterBoolean=false;
     let routefilter =location.pathname;
     let routefilteredData ;
-    
+
     if(routefilter !== undefined){
         routerFilterBoolean=true;
         const filteredData = filteredRowData.filter(val => {
