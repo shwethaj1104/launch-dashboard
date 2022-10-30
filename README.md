@@ -10,4 +10,6 @@ Filtering respective to status of launch:
 
 
 Modal popup: User will be able to click on a launch to view detailed information about the respective launch
+![image](https://user-images.githubusercontent.com/107784718/198862971-0026bd89-4486-4d78-a1fd-c392a034690e.png)
+
 
