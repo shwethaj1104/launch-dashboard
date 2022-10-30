@@ -5,6 +5,8 @@ Landing page with all launches:
 
 
 Filtering respective to status of launch:
+![image](https://user-images.githubusercontent.com/107784718/198862953-b000cf29-3faa-40ec-8630-724935433b5e.png)
+
 
 
 Modal popup: User will be able to click on a launch to view detailed information about the respective launch
